@@ -1,0 +1,238 @@
+@charset "UTF-8";
+/* About Page Styles */
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .page-header p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .about-mission, .about-story {
+    padding: 5rem 0;
+  }
+  
+  .mission-content, .story-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+  
+  .mission-text, .story-text {
+    flex: 1;
+  }
+  
+  .mission-text h2, .story-text h2 {
+    font-size: 2.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+  }
+  
+  .mission-text p, .story-text p {
+    font-size: 1.1rem;
+    color: var(--gray-color);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+  
+  .mission-image, .story-image {
+    flex: 1;
+  }
+  
+  .mission-image .image-placeholder, .story-image .image-placeholder {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(155, 135, 245, 0.1);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mission-image .placeholder-content, .story-image .placeholder-content {
+    font-size: 8rem;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .about-values {
+    padding: 5rem 0;
+    background-color: var(--light-color);
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .value-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .value-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .value-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+  }
+  
+  .value-card p {
+    color: var(--gray-color);
+    line-height: 1.6;
+  }
+  
+  .about-team {
+    padding: 5rem 0;
+  }
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .team-card {
+    text-align: center;
+  }
+  
+  .team-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
+  
+  .team-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .team-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+  }
+  
+  .team-role {
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  
+  .team-bio {
+    color: var(--gray-color);
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  
+  .about-stats {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+  }
+  
+  .stats-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .stat-block {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .mission-content, .story-content {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .story-content {
+      flex-direction: column-reverse;
+    }
+    
+    .mission-text, .story-text, .mission-image, .story-image {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2.5rem;
+    }
+    
+    .mission-text h2, .story-text h2 {
+      font-size: 2rem;
+    }
+    
+    .stat-number {
+      font-size: 2.5rem;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+    
+    .page-header p {
+      font-size: 1rem;
+    }
+  }
+  
