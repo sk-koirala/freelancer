@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +46,7 @@
           </div>
         </div>
         
-        <form id="loginForm" class="auth-form">
+        <form action="auth" method="post">
           <div class="form-group">
             <label for="email">Email Address</label>
             <input type="email" id="email" placeholder="Enter your email" required>

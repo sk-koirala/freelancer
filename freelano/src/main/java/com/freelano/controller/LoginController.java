@@ -62,12 +62,8 @@ public class LoginController extends HttpServlet {
         }
     }
 
-    /**
-     * Stubbed user validation method:
-     * Replace with actual DB check or your own logic.
-     */
-    private boolean isValidUser(String username, String password) {
-        // or you'd do userDao.checkCredentials(username, password);
-        return "suyash".equals(username) && "Koirala@123".equals(password);
-    }
+	private boolean isValidUser(String username, String password) {
+		return false;
+	}
+
 }

@@ -1,15 +1,15 @@
 package com.freelano.model;
 
 public class Client {
-    private int clientId;
+    private int id;
     private String name;
     private String email;
     private String phone;
     private String address;
 
     // Getters & Setters
-    public int getClientId() { return clientId; }
-    public void setClientId(int clientId) { this.clientId = clientId; }
+    public int getId() { return id; }
+    public void setId(int clientId) { this.id = id; }
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }

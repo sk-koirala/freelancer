@@ -1,91 +1,53 @@
 package com.freelano.util;
 
+import java.util.regex.Pattern;
+
+
 public class ValidationUtil {
 
-    /**
-     * Validates if the provided text contains only letters and whitespace characters.
-     * 
-     * @param text The text to be validated.
-     * @return True if the text contains only letters and whitespace, false otherwise.
-     */
-    public static boolean isTextOnly(String text) {
-        return text.matches("[a-zA-Z\\s]+"); // Match letters and whitespace only
+    // 1. Validate if a field is null or empty
+    public static boolean isNullOrEmpty(String value) {
+        return value == null || value.trim().isEmpty();
     }
 
-    /**
-     * Validates if the provided text contains only digits (0-9).
-     * 
-     * @param text The text to be validated.
-     * @return True if the text contains only digits, false otherwise.
-     */
-    public static boolean isNumbersOnly(String text) {
-        return text.matches("\\d+"); // Match digits only
+    // 2. Validate if a string contains only letters
+    public static boolean isAlphabetic(String value) {
+        return value != null && value.matches("^[a-zA-Z]+$");
     }
 
-    /**
-     * Validates if the provided text is alphanumeric, containing only letters and digits.
-     * 
-     * @param text The text to be validated.
-     * @return True if the text is alphanumeric, false otherwise.
-     */
-    public static boolean isAlphanumeric(String text) {
-        return text.matches("[a-zA-Z0-9]+"); // Match letters and digits only
+    // 3. Validate if a string starts with a letter and is composed of letters and numbers
+    public static boolean isAlphanumericStartingWithLetter(String value) {
+        return value != null && value.matches("^[a-zA-Z][a-zA-Z0-9]*$");
     }
 
-    /**
-     * Validates if the provided text is a valid email address format.
-     * 
-     * @param email The email address to be validated.
-     * @return True if the email address has a valid format, false otherwise.
-     */
+ 
+    // 4. Validate if a string is a valid email address
     public static boolean isEmail(String email) {
-        return email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,}$"); // Match standard email pattern
+        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        return email != null && Pattern.matches(emailRegex, email);
     }
 
-    /**
-     * Validates if the provided text contains no special characters other than letters, digits, and whitespace.
-     * 
-     * @param text The text to be validated.     
-     * @return True if the text contains no special characters, false otherwise.
-     */
-    public static boolean hasNoSpecialCharacters(String text) {
-        return text.matches("[a-zA-Z0-9\\s]+"); // Match only letters, digits, and whitespace
+    // 5. Validate if a number is of 10 digits and starts with 98
+    public static boolean isPhone(String number) {
+        return number != null && number.matches("^98\\d{8}$");
     }
 
-    /**
-     * Validates if the provided password meets complexity requirements:
-     * - Contains at least one uppercase letter (A-Z)
-     * - Contains at least one lowercase letter (a-z)
-     * - Contains at least one digit (0-9)
-     * - Contains at least one symbol (@$!%*?&).
-     * 
-     * @param password The password to be validated.
-     * @return True if the password meets complexity requirements, false otherwise.
-     */
+    // 6. Validate if a password is composed of at least 1 capital letter, 1 number, and 1 symbol
     public static boolean isValidPassword(String password) {
-        return password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]*$"); // No length validation
+        String passwordRegex = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+        return password != null && password.matches(passwordRegex);
     }
+    
+    public static boolean isName(String n) {
+        return n != null && n.matches("^[A-Za-z ]+$");
+      }
 
-    /**
-     * Validates if the provided text has the specified length.
-     * 
-     * @param text The text to be validated.
-     * @param length The expected length of the text.
-     * @return True if the text has the specified length, false otherwise.
-     */
-    public static boolean hasLength(String text, int length) {
-        return text.length() == length;
-    }
-    
-    
-    /**
-     * Checks if the provided gender matches "male" or "female" (ignoring case).
-     * 
-     * @param gender The gender to be validated.
-     * @return True if the gender matches "male" or "female", false otherwise.
-     */
-    public static boolean isGenderMatches(String gender) {
-        // Convert the gender to lowercase and compare with "male" and "female" ignoring case
-        return gender != null && (gender.equalsIgnoreCase("male") || gender.equalsIgnoreCase("female"));
+   
+
+    // 9. Validate if password and retype password match
+    public static boolean doPasswordsMatch(String password, String retypePassword) {
+        return password != null && password.equals(retypePassword);
     }
 }
+
+   

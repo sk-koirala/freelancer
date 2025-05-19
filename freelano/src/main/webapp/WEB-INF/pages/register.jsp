@@ -42,7 +42,7 @@
           </div>
         </div>
         
-        <form id="registerForm" class="auth-form">
+        <form action="auth" method="post">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" placeholder="Enter your full name" required>
